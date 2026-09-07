@@ -1,21 +1,21 @@
 package Array.assignment_problems;
-
 import java.util.Scanner;
 
-public class Duplicate {
+public class maximumsubarray {
 
-    static boolean containsDuplicate(int[] nums) {
+    static int maxSubArray(int[] nums) {
 
-        for (int i = 0; i < nums.length; i++) {
-            for (int j = i + 1; j < nums.length; j++) {
+        int currentSum = nums[0];
+        int maxSum = nums[0];
 
-                if (nums[i] == nums[j]) {
-                    return true;
-                }
-            }
+        for (int i = 1; i < nums.length; i++) {
+
+            currentSum = Math.max(nums[i], currentSum + nums[i]);
+
+            maxSum = Math.max(maxSum, currentSum);
         }
 
-        return false;
+        return maxSum;
     }
 
     public static void main(String[] args) {
@@ -32,6 +32,6 @@ public class Duplicate {
             nums[i] = sc.nextInt();
         }
 
-        System.out.println(containsDuplicate(nums));
+        System.out.println(maxSubArray(nums));
     }
 }

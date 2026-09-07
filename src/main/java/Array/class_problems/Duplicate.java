@@ -1,22 +1,21 @@
-package Array.assignment_problems;
+package Array.class_problems;
 
 import java.util.Scanner;
-import java.util.Arrays;
 
-public class Twosums {
+public class Duplicate {
 
-    static int[] twoSum(int[] nums, int target) {
+    static boolean containsDuplicate(int[] nums) {
 
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
 
-                if (nums[i] + nums[j] == target) {
-                    return new int[]{i, j};
+                if (nums[i] == nums[j]) {
+                    return true;
                 }
             }
         }
 
-        return new int[]{};
+        return false;
     }
 
     public static void main(String[] args) {
@@ -33,11 +32,6 @@ public class Twosums {
             nums[i] = sc.nextInt();
         }
 
-        System.out.print("Enter target: ");
-        int target = sc.nextInt();
-
-        int[] result = twoSum(nums, target);
-
-        System.out.println(Arrays.toString(result));
+        System.out.println(containsDuplicate(nums));
     }
 }

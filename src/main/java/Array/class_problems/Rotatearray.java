@@ -1,4 +1,4 @@
-package Array.assignment_problems;
+package Array.class_problems;
 import java.util.Scanner;
 import java.util.Arrays;
 
