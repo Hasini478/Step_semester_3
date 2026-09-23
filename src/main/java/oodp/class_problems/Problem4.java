@@ -1,4 +1,4 @@
-package oodp.assignment_problems;
+package oodp.class_problems;
 
 class Problem4 {
 
